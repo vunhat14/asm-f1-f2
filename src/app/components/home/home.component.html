@@ -1,0 +1,209 @@
+<!-- Banner Section -->
+<section class="banner-section">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-lg-6">
+        <h1 class="display-4 fw-bold">Hello, I'm <span class="text-primary">Vũ Nhất</span></h1>
+        <h2 class="mb-4">Full Stack Developer</h2>
+        <p class="lead mb-4">Tôi xây dựng giao diện trang website hiện đại</p>
+        <div class="d-flex gap-3">
+          <a routerLink="/projects" class="btn btn-primary">View Projects</a>
+          <a routerLink="/contact" class="btn btn-outline-primary">Contact Me</a>
+        </div>
+      </div>
+      <div class="col-lg-6 d-none d-lg-block">
+        <img src="/images/profile.jpg" alt="Profile Image" class="img-fluid rounded-3 shadow">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="about-section py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <h2 class="section-title">Trịnh Vũ Nhất</h2>
+        <p>Tôi là một lập trình viên full-stack đầy nhiệt huyết với chuyên môn xây dựng các ứng dụng web hiện đại. Với nền tảng vững chắc về cả công nghệ front-end và back-end, tôi tạo ra những trải nghiệm thân thiện với người dùng, phản hồi nhanh, giải quyết các vấn đề thực tế.</p>
+        <p>Hành trình phát triển phần mềm của tôi bắt đầu cách đây vài năm và kể từ đó tôi đã làm việc trên nhiều dự án khác nhau, từ nền tảng thương mại điện tử đến hệ thống quản lý nội dung, v.v.</p>
+        <a routerLink="/about" class="btn btn-link p-0">
+          Learn more about me
+          <fa-icon [icon]="faArrowRight" class="ms-2"></fa-icon>
+        </a>
+      </div>
+      <div class="col-lg-6">
+        <div class="skills-container">
+          <h3>Skills</h3>
+          <div class="row">
+            <div class="col-6">
+              <h4 class="skill-category">Frontend</h4>
+              <ul class="list-unstyled">
+                <li>HTML, CSS, JavaScript</li>
+                <li>Angular, React</li>
+                <li>Bootstrap, Tailwind CSS</li>
+                <li>Responsive Design</li>
+              </ul>
+            </div>
+            <div class="col-6">
+              <h4 class="skill-category">Backend</h4>
+              <ul class="list-unstyled">
+                <li>Node.js, Express</li>
+                <li>PHP, Laravel</li>
+                <li>RESTful APIs</li>
+                <li>Database Design</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Projects Section -->
+<section class="projects-section py-5 bg-light">
+  <div class="container">
+    <div class="section-header text-center mb-5">
+      <h2 class="section-title">Dự án nổi bật</h2>
+      <p class="section-subtitle">Hãy xem một số tác phẩm gần đây của tôi</p>
+    </div>
+    <div class="row">
+      <!-- Project Card 1 -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card project-card h-100">
+          <img src="/images/project1.PNG" class="card-img-top" alt="Project 1">
+          <div class="card-body">
+            <h5 class="card-title">Website bán đồ thể thao</h5>
+            <p class="card-text">Một trang website bán đồ thể thao được làm từ Figma, JavaScript và HTML/CSS</p>
+            <div class="technology-tags">
+              <span class="badge bg-primary me-1">FIGMA</span>
+              <span class="badge bg-secondary me-1">JAVASCRIPT</span>
+              <span class="badge bg-info">HTML/CSS</span>
+            </div>
+          </div>
+          <div class="card-footer bg-transparent border-top-0">
+            <a routerLink="/projects/1" class="btn btn-outline-primary btn-sm">View Details</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card 2 -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card project-card h-100">
+          <img src="/images/project2.PNG" class="card-img-top" alt="Project 2">
+          <div class="card-body">
+            <h5 class="card-title">DEMO ESHOPER</h5>
+            <p class="card-text">Bản demo trang website bán các mặt hàng thời trang</p>
+            <div class="technology-tags">
+              <span class="badge bg-primary me-1">Angular</span>
+              <span class="badge bg-secondary me-1">Express</span>
+              <span class="badge bg-info">PostgreSQL</span>
+            </div>
+          </div>
+          <div class="card-footer bg-transparent border-top-0">
+            <a routerLink="/projects/2" class="btn btn-outline-primary btn-sm">View Details</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card 3 -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card project-card h-100">
+          <img src="/images/project3.PNG" class="card-img-top" alt="Project 3">
+          <div class="card-body">
+            <h5 class="card-title">Nền tảng blog</h5>
+            <p class="card-text">Một nền tảng blog hiện đại với hệ thống quản lý nội dung, xác thực người dùng và thiết kế đáp ứng.</p>
+            <div class="technology-tags">
+              <span class="badge bg-primary me-1">Angular</span>
+              <span class="badge bg-secondary me-1">Laravel</span>
+              <span class="badge bg-info">MySQL</span>
+            </div>
+          </div>
+          <div class="card-footer bg-transparent border-top-0">
+            <a routerLink="/projects/3" class="btn btn-outline-primary btn-sm">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-4">
+      <a routerLink="/projects" class="btn btn-primary">View All Projects</a>
+    </div>
+  </div>
+</section>
+
+<!-- Education Section -->
+<section class="education-section py-5">
+  <div class="container">
+    <div class="section-header text-center mb-5">
+      <h2 class="section-title">Giáo dục & Chứng chỉ</h2>
+      <p class="section-subtitle">Hành trình học tập và phát triển nghề nghiệp của tôi</p>
+    </div>
+    <div class="row">
+      <!-- Education Item 1 -->
+      <div class="col-md-6 mb-4">
+        <div class="education-item">
+          <div class="education-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div class="education-content">
+            <h3>Cử nhân Cao Đẳng chuyên ngành Công nghệ thông tin</h3>
+            <h4>Cao đẳng FPT Polytechnic</h4>
+            <p class="education-date">2023 - 2025</p>
+            <p>Tốt nghiệp loại xuất sắc, chuyên ngành kỹ thuật phần mềm và phát triển web.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education Item 2 -->
+      <div class="col-md-6 mb-4">
+        <div class="education-item">
+          <div class="education-icon">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <div class="education-content">
+            <h3>Tin học văn phòng</h3>
+            <h4>Online</h4>
+            <p class="education-date">2024</p>
+            <p>Chương trình chuyên sâu về tin học văn phòng.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certification Item 1 -->
+      <div class="col-md-6 mb-4">
+        <div class="education-item">
+          <div class="education-icon">
+            <i class="fas fa-award"></i>
+          </div>
+          <div class="education-content">
+            <h3>Thiết kế UI-UX</h3>
+            <h4>Online</h4>
+            <p class="education-date">2024</p>
+            <p>Chứng nhận thiết kế đồ họa bằng UI-UX.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certification Item 2 -->
+      <div class="col-md-6 mb-4">
+        <div class="education-item">
+          <div class="education-icon">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <div class="education-content">
+            <h3>Thiết kế Web với HTML5&CSS3</h3>
+            <h4>Cao đẳng FPT Polytechnic</h4>
+            <p class="education-date">2024</p>
+            <p>Chuyên sâu về thiết kế Web với HTML5&CSS3.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-4">
+      <a routerLink="/education" class="btn btn-primary">Xem tất cả các thông tin xác thực</a>
+    </div>
+  </div>
+</section>
+
+<!-- Contact CTA Section -->
+

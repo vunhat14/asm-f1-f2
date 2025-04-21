@@ -1,0 +1,70 @@
+<!-- Page Header -->
+<header class="page-header bg-primary text-white py-5 mb-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-8">
+        <h1 class="display-4 fw-bold">My Projects</h1>
+        <p class="lead">Bộ sưu tập các tác phẩm và dự án mà tôi đã tham gia.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Projects Section -->
+<section class="projects-section py-5">
+  <div class="container">
+    <!-- Category Filters -->
+    <div class="category-filters mb-5">
+      <div class="d-flex justify-content-center flex-wrap">
+        <button
+          class="btn btn-filter me-2 mb-2"
+          [class.active]="selectedCategory === 'All'"
+          (click)="filterByCategory('All')">
+          All Projects
+        </button>
+        <button
+          *ngFor="let category of categories"
+          class="btn btn-filter me-2 mb-2"
+          [class.active]="selectedCategory === category"
+          (click)="filterByCategory(category)">
+          {{ category }}
+        </button>
+      </div>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="row">
+      <div class="col-md-6 col-lg-4 mb-4" *ngFor="let project of filteredProjects">
+        <div class="card project-card h-100">
+          <img [src]="project.imageUrl" class="card-img-top" [alt]="project.title">
+          <div class="card-body">
+            <h5 class="card-title">{{ project.title }}</h5>
+            <p class="card-text">{{ project.description }}</p>
+            <div class="technology-tags mb-3">
+              <span *ngFor="let tech of project.technologies" class="badge bg-secondary me-1 mb-1">{{ tech }}</span>
+            </div>
+          </div>
+          <div class="card-footer bg-transparent border-top-0">
+            <div class="d-flex justify-content-between">
+              <a [routerLink]="['/projects', project.id]" class="btn btn-outline-primary btn-sm">View Details</a>
+              <div class="project-links">
+                <a *ngIf="project.githubUrl" [href]="project.githubUrl" target="_blank" class="btn btn-sm btn-link">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a *ngIf="project.liveUrl" [href]="project.liveUrl" target="_blank" class="btn btn-sm btn-link">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- No Projects Message -->
+    <div *ngIf="filteredProjects.length === 0" class="text-center py-5">
+      <h3>No projects found in this category.</h3>
+      <button class="btn btn-primary mt-3" (click)="filterByCategory('All')">View All Projects</button>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,99 @@
+<div class="container py-5" *ngIf="project">
+  <!-- Back Button -->
+  <div class="mb-4">
+    <a routerLink="/projects" class="btn btn-outline-primary">
+      <fa-icon [icon]="faArrowLeft" class="me-2"></fa-icon>
+      Back to Projects
+    </a>
+  </div>
+
+  <!-- Project Header -->
+  <div class="project-header mb-5">
+    <h1 class="display-5 fw-bold mb-3">{{ project.title }}</h1>
+    <div class="project-meta d-flex flex-wrap align-items-center mb-4">
+      <span class="project-date me-4" *ngIf="project.date">
+        <i class="far fa-calendar-alt me-2"></i>{{ project.date }}
+      </span>
+      <span class="project-category me-4" *ngIf="project.category">
+        <i class="fas fa-tag me-2"></i>{{ project.category }}
+      </span>
+      <div class="project-links">
+        <a *ngIf="project.githubUrl" [href]="project.githubUrl" target="_blank" class="btn btn-sm btn-outline-dark me-2">
+          <fa-icon [icon]="faGithub" class="me-1"></fa-icon> GitHub
+        </a>
+        <a *ngIf="project.liveUrl" [href]="project.liveUrl" target="_blank" class="btn btn-sm btn-outline-primary">
+          <fa-icon [icon]="faExternalLink" class="me-1"></fa-icon> Live Demo
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project Image -->
+  <div class="project-image mb-5">
+    <img [src]="project.imageUrl" [alt]="project.title" class="img-fluid rounded shadow-sm">
+  </div>
+
+  <!-- Project Description -->
+  <div class="row mb-5">
+    <div class="col-lg-8">
+      <div class="project-description">
+        <h2 class="mb-4">Project Overview</h2>
+        <p>{{ project.description }}</p>
+        <div class="mt-4" *ngIf="project.longDescription">
+          <div [innerHTML]="project.longDescription | nbsp"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="project-details bg-light p-4 rounded shadow-sm">
+        <h3 class="mb-4">Project Details</h3>
+
+        <div class="mb-4">
+          <h4 class="h5">Technologies</h4>
+          <div class="technology-tags">
+            <span *ngFor="let tech of project.technologies" class="badge bg-secondary me-1 mb-1">{{ tech }}</span>
+          </div>
+        </div>
+
+        <div class="mb-4" *ngIf="project.date">
+          <h4 class="h5">Date</h4>
+          <p class="mb-0">{{ project.date }}</p>
+        </div>
+
+        <div *ngIf="project.category">
+          <h4 class="h5">Category</h4>
+          <p class="mb-0">{{ project.category }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Related Projects -->
+  <div class="related-projects" *ngIf="relatedProjects.length > 0">
+    <h2 class="mb-4">Related Projects</h2>
+    <div class="row">
+      <div class="col-md-4 mb-4" *ngFor="let relatedProject of relatedProjects">
+        <div class="card project-card h-100">
+          <img [src]="relatedProject.imageUrl" class="card-img-top" [alt]="relatedProject.title">
+          <div class="card-body">
+            <h5 class="card-title">{{ relatedProject.title }}</h5>
+            <p class="card-text">{{ relatedProject.description }}</p>
+          </div>
+          <div class="card-footer bg-transparent border-top-0">
+            <a [routerLink]="['/projects', relatedProject.id]" class="btn btn-outline-primary btn-sm">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Loading/Error State -->
+<div class="container py-5" *ngIf="!project">
+  <div class="text-center">
+    <div class="spinner-border text-primary" role="status" *ngIf="!project">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <p class="lead mt-3" *ngIf="!project">Loading project details...</p>
+  </div>
+</div>

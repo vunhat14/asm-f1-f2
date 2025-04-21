@@ -1,0 +1,37 @@
+.timeline {
+    position: relative;
+    margin-left: 1rem;
+    border-left: 3px solid #007bff;
+    padding-left: 1.5rem;
+  }
+  
+  .timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+  }
+  
+  .timeline-icon {
+    position: absolute;
+    left: -31px;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+  }
+  
+  .timeline-content {
+    background: white;
+    padding: 1rem 1.25rem;
+    border-radius: 0.75rem;
+    border-left: 4px solid #007bff;
+    transition: all 0.3s ease;
+  }
+  
+  .timeline-content:hover {
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.1);
+  }
+  

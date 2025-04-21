@@ -1,0 +1,222 @@
+// Header Styles
+.page-header {
+  position: relative;
+  background: linear-gradient(135deg, #0011f8 0%, #01ffdd 100%);
+}
+
+// Section Styles
+.section-title {
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #17a2b8;
+    margin-top: 10px;
+  }
+
+  &.text-center {
+    &::after {
+      margin: 10px auto 0;
+    }
+  }
+}
+
+// About Image Styles
+.about-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(23, 162, 184, 0.2) 0%, rgba(13, 110, 253, 0.2) 100%);
+    pointer-events: none;
+  }
+
+  img {
+    transition: transform 0.5s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+// Skills Section
+.skills-section {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.skill-category {
+  color: #17a2b8;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.skill-item {
+  margin-bottom: 1rem;
+
+  span {
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .progress {
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+}
+
+// Philosophy List
+.philosophy-list {
+  list-style-type: none;
+  padding-left: 0;
+
+  li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e9ecef;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+// Timeline
+.timeline {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 3px;
+    height: 100%;
+    background-color: #e9ecef;
+    transform: translateX(-50%);
+  }
+}
+
+.timeline-container {
+  position: relative;
+  margin-bottom: 2.5rem;
+  display: flex;
+
+  &:nth-child(odd) {
+    flex-direction: row;
+    padding-right: 50%;
+
+    .timeline-icon {
+      right: 0;
+      transform: translateX(50%);
+    }
+  }
+
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+    padding-left: 50%;
+
+    .timeline-icon {
+      left: 0;
+      transform: translateX(-50%);
+    }
+
+    .timeline-body {
+      text-align: right;
+    }
+  }
+}
+
+.timeline-icon {
+  position: absolute;
+  top: 0;
+  width: 80px;
+  height: 80px;
+  background-color: #0d6efd;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+
+  .year {
+    font-weight: 700;
+    color: #fff;
+  }
+}
+
+.timeline-body {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 80%;
+}
+
+.timeline-title {
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.timeline-subtitle {
+  color: #6c757d;
+  margin-bottom: 1rem;
+}
+
+// Interest Cards
+.interest-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-10px);
+  }
+}
+
+.interest-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+// Media Queries
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 40px;
+  }
+
+  .timeline-container {
+    flex-direction: row !important;
+    padding-right: 0 !important;
+    padding-left: 100px !important;
+
+    .timeline-icon {
+      left: 0 !important;
+      right: auto !important;
+      transform: translateX(0) !important;
+    }
+
+    .timeline-body {
+      width: 100%;
+      text-align: left !important;
+    }
+  }
+}

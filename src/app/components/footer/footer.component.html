@@ -1,0 +1,47 @@
+<footer class="bg-dark text-white py-5">
+  <div class="container">
+    <div class="row">
+      <!-- Portfolio Section -->
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h5 class="fw-bold text-uppercase">My Portfolio</h5>
+        <p class="text-muted">A showcase of my skills, projects, and experience.</p>
+      </div>
+
+      <!-- Quick Links Section -->
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h5 class="fw-bold text-uppercase">Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a routerLink="/" class="footer-link">Home</a></li>
+          <li><a routerLink="/about" class="footer-link">About</a></li>
+          <li><a routerLink="/projects" class="footer-link">Projects</a></li>
+          <li><a routerLink="/education" class="footer-link">Education</a></li>
+          <li><a routerLink="/contact" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Connect Section -->
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h5 class="fw-bold text-uppercase">Connect</h5>
+        <div class="social-icons">
+          <a href="https://github.com/vunhat14" target="_blank" class="me-3">
+            <fa-icon [icon]="faGithub" class="social-icon"></fa-icon>
+          </a>
+          <a href="https://linkedin.com" target="_blank" class="me-3">
+            <fa-icon [icon]="faLinkedin" class="social-icon"></fa-icon>
+          </a>
+          <a href="https://twitter.com" target="_blank">
+            <fa-icon [icon]="faTwitter" class="social-icon"></fa-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <hr class="my-4 text-secondary">
+
+    <!-- Copyright Section -->
+    <div class="text-center">
+      <p class="mb-0">&copy; {{currentYear}} VuNhat. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
